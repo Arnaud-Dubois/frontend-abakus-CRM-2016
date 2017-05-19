@@ -1,0 +1,143 @@
+@import "compass";
+@import "grids";
+@import "variables";
+
+
+.myProfileClientwarpper {
+
+	width: 940px;
+	height: auto;
+	margin: 0 auto;
+
+}
+
+
+.myProfileClient {
+
+	width: 742px;
+	height: auto;
+	float: right;	
+	text-align: left;
+	margin-top: 117px;
+	position: relative;
+	padding-bottom: 100px;
+
+	a:first-child {
+
+		margin-top: 0px;
+	}
+
+	p, h2, h3 {
+
+		text-align: left;		
+	}
+
+	p {
+
+		font-size: 13px;
+		line-height: 20px;
+	}
+
+	h3 {
+
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	h2 {
+		
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+
+	a {
+
+	height: 46px;
+	width: 230px;
+	background-color: $focusColor;
+	float: left;
+	margin-top: 15px;
+
+
+	img {
+
+		width: 28px; 
+		height: 28px;
+		float: left;
+		margin-top: 9px;
+		margin-left: 7px;		
+	}
+
+	h2 {
+	
+		font-weight: bold;
+		font-size: 14px;
+		margin-top: 16px;
+		color: $primaryColor;
+		float: left;
+		margin-left: 7px;
+
+	}
+}
+ 
+
+
+img {
+
+		width: 92px;
+		height: 92px;
+		float: left;
+		margin-top: 14px;
+		margin-left: 20px;
+		
+	}
+
+
+.coordonneeCont, .contactCont, .paymentCont, .articleCont, .templateCont {
+
+	background-color: $mainBackgroundColor;
+	width: 100%;
+	height: auto;
+	float: left;
+	display: block;
+	padding-bottom: 15px;
+	display: block;
+	
+} 
+
+
+.info {
+
+	margin-top: 14px;
+	margin-left: 20px;
+	width: auto;
+	float: left;
+
+	p {
+
+		margin-top: 10px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

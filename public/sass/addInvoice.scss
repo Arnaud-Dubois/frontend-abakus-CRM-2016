@@ -1,0 +1,227 @@
+@import "compass";
+@import "grids";
+@import "variables";
+html {
+    @include box-sizing(border-box);
+}
+
+.contener {
+    @include container(742px);
+}
+
+.addInvoice {
+    margin: auto;
+    margin-left: 198px;
+    margin-top: 180px;
+    background: $mainBackgroundColor;
+    margin-bottom: 90px;
+    :first-letter {
+        text-transform: uppercase;
+    }
+}
+
+fieldset {
+    border: 1px solid $primaryColor;
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 20px;
+    legend {
+        margin-bottom: 20px;
+    }
+}
+
+.references {
+    input {
+        @include span(4 of 12);
+        &:last-child {
+            @include last;
+        }
+    }
+}
+
+.ref_client {
+    #client {
+        margin: auto;
+    }
+}
+
+.cent {
+    @include span(12 of 12);
+}
+
+.half {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    @include span(6 of 12);
+    &:nth-child(2) {
+        @include last;
+        
+    }
+    select {
+        width: 100%;
+        display: block;
+    }
+    input {
+        width: 100%;
+        display: block;
+    }
+}
+
+.last {
+    @include last;
+}
+#halfEstimate{
+    float: left;
+}
+.next {
+    @include navButton;
+    display: none;
+    width: 90px;
+    float: right;
+    background: $primaryColor;
+    color: white;
+    text-transform: uppercase;
+}
+
+#po {
+    text-transform: capitalize;
+}
+
+.facture {
+    @include span(12 of 12);
+    text-transform: capitalize;
+    .article {
+        @include span(3 of 12);
+        label {
+            display: block;
+        }
+    }
+    .description {
+        @include span(4 of 12);
+        label {
+            display: block;
+        }
+        input {
+            width: 120px;
+        }
+    }
+    .small {
+        @include span(1 of 12);
+        label {
+            display: block;
+        }
+        input {
+            width: 40px;
+        }
+    }
+    .bill {
+        @include span(2 of 12);
+        label {
+            display: block;
+        }
+    }
+}
+
+.total {
+    margin-top: 35px;
+    float: right;
+    display: block;
+    >div {
+        @include pie-clearfix;
+        display: block;
+        margin-bottom: 15px;
+        text-align: right;
+        label {
+            @include span(7);
+            display: inline-block;
+        }
+        input {
+            @include span(5 last);
+        }
+        &.rebate {
+            input {
+                @include span(3);
+            }
+            select {
+                @include span(2 last);
+            }
+        }
+    }
+}
+
+.more_line {
+    @include navButton;
+    float: left;
+    margin-bottom: 20px;
+    width: 90px;
+    background: $primaryColor;
+    color: white;
+    text-transform: uppercase;
+}
+
+.commitment {
+    @include span(12);
+    margin-bottom: 70px;
+    label {
+        display: block;
+        float: left;
+    }
+    select {
+        width: 100%;
+    }
+}
+
+.payment {
+    @include span(6);
+    &#payement2 {
+        @include last;
+    }
+    label {
+        display: block;
+    }
+    select {
+        width: 100%;
+    }
+}
+
+.listing_achat {
+    @include span(12);
+    #less {
+        @include span(0.7);
+        float: right;
+        margin-right: 0;
+    }
+    #amount {
+        margin-right: 0;
+    }
+}
+
+.full {
+    @include span(2.5);
+    margin-right: 20px;
+    width: 118px;
+    &:first-child {
+        margin-left: 10px;
+        margin-right: 30px;
+    }
+    &:nth-child(2) {
+        margin-left: 23px;
+    }
+}
+
+.quart {
+    @include span(1);
+}
+
+#quart1 {
+    margin-left: 28px;
+}
+
+.hulk {
+    color: #90ec90;
+}
+
+.superman {
+    color: #ed8e8e;
+}

@@ -1,0 +1,216 @@
+@import "compass";
+@import "grids";
+@import "variables";
+
+
+.profilePro {
+
+
+
+
+	input, select {
+
+		background-color: $navColor;
+		border: none;
+		color: $primaryColor;
+		padding-left: 5px;
+		margin-bottom: 7px;
+		margin-left: 5px;
+	}
+
+
+	.info {
+
+		width: 330px;
+	}
+
+	.tva {
+
+		margin-top: 10px;
+	}
+
+	.contactCont {
+
+		p {
+
+			margin-top: 14px;
+			padding-bottom: 0px;
+		}
+
+		img {
+
+			background-color: none;
+		}
+	}
+
+
+	.paymentCont {
+
+
+	}
+
+	.templateCont {
+
+		padding-top: 0px;
+	}
+
+	.designfacture, .designdevis {
+
+
+		width: 500px;
+
+		
+	}
+
+	.paymentCont {
+
+		li {
+
+			display: block;
+			width: 300px;
+		}
+
+		ul {
+
+			margin-left: 10px;
+		}
+
+		label {
+
+			font-weight: normal;
+		}
+
+		span {
+
+			font-weight: bold;
+		}
+
+
+	}
+
+
+
+	.full {
+
+		width: 158px;
+		margin-left: 14px;
+
+		label {
+
+			margin-left: 5px;
+		}
+
+		input {
+
+			margin-top: 5px;
+		}
+	}
+
+	label {
+
+		font-size: 13px;
+		margin-top: 10px;		
+	}
+
+	.facture {
+
+		margin-top: 20px;
+	}
+
+	.articleCont {
+
+		label {
+
+			font-weight: bold;
+		}
+
+		input {
+
+			margin-left: 20px;
+			width: 275px;
+
+		}
+
+		input:first-child {
+
+			margin-left: 0px;
+		}
+
+		input:nth-child(3) {
+
+			width: 50px;
+			margin-left: 64px;
+		}
+
+		button {
+		
+		margin-left: 20px;
+
+		}
+	}
+
+	.small {
+
+		margin-left: 73px;
+
+		input {
+
+			width: 78px;
+
+		}
+	}
+
+	.description {
+
+		margin-left: 111px;
+	}
+
+	.article, .description, .small {
+
+		label {
+
+			margin-left: 20px;
+			margin-bottom: 10px;
+		}
+	}
+
+
+	.more_line {
+
+		margin-left: 20px;
+		margin-bottom: 0px;
+	}
+
+	.submit {
+
+		position: absolute;
+		margin-top: 25px;
+		margin-left: 657px; 
+	}
+
+
+	.paypal {
+
+		margin-top: 100px;
+
+		ul {
+
+			margin-top: 125px;
+		}
+	}
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+}
+
+

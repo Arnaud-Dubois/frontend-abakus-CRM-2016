@@ -1,0 +1,56 @@
+<linkhomepro></linkhomepro>
+
+<navbarpro></navbarpro>
+<searchbarpro></searchbarpro>
+
+<div>
+	<div class="container">
+
+			<a href="#/pro/invoice/add" class="addElemBtn">+ facture</a>
+
+		<ul class="listingTitle">     <!-- Liste des devis -->
+			<li>
+					<div class="listItem">
+						<div class="blocItem">
+							<span class="itemDatas focusItem">Numéro</span>
+							<span class="itemDatas focusItem">Client</span>
+							<span class="itemDatas focusItem">Date de facturation</span>
+							<span class="itemDatas focusItem">Statut</span>
+							<!--<span class="itemDatas blocInvoiceNumber">Payé</span>-->
+						</div>
+					</div>
+			</li>
+		</ul> <!-- Fin de liste des devis -->		
+		<ul class="listing">     <!-- Liste des devis -->
+			<li ng-repeat="item in listBills | filter: filter | orderBy : order:direction">
+
+				<div class="listItem">
+					<div class="blocItem">
+						<span class="itemDatas blocNumber">
+							<span class="titleItem">Numéro </span> 
+							{{item.link}}
+						</span>
+						<span class="itemDatas blocName">
+							<span class="titleItem">Client </span> 
+							{{item.clientName}}
+						</span>
+						<span class="itemDatas blocDate">
+							<span class="titleItem">Date </span> 
+							{{item.createdAt | date:'dd-MM-yyyy'}}
+						</span>
+						<span class="itemDatas blocDate">
+							<span class="titleItem">Statut </span> 
+							<span ng-show="{{item.state}}" class="hulk">Payé</span>
+							<span ng-hide="{{item.state}}" class="superman">En attente</span>
+						</span>
+						<!--<span class="itemDatas blocInvoiceNumber">{{item.state}}</span>-->
+					
+					</div>
+					<a href="documents/bills/{{item.clientId}}/{{item.link}}.pdf" class="moreInfos" target="_blank">
+					Ouvrir le PDF
+					</a>
+				</div>
+			</li>
+		</ul> <!-- Fin de liste des devis -->
+	</div>
+</div>

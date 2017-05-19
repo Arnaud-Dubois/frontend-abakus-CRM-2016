@@ -1,0 +1,49 @@
+<linkhomeclient></linkhomeclient>
+
+<!-- <h1 style="background-color:#d5f5e3;">Liste de mes factures</h1> -->
+
+
+<!-- <ul>
+	<li ng-repeat="lel in users | filter: filter "><a href="#">
+		{{lel.mark}} : {{lel.size}} : {{lel.price}}</a>
+	</li>
+</ul> -->
+<navbarclient></navbarclient>
+<searchbarclient></searchbarclient>
+
+<div>
+	<div class="container">
+	<a href="#/pro/invoice/add" class="addElemBtn" style="visibility:hidden">+ facture</a>
+	<ul class="listingTitle">
+		<li>
+			<div class="listItem">
+				<div class="blocItem">
+					<span class="itemDatas focusItem">Numéro</span>
+					<span class="itemDatas focusItem">Client</span>
+					<span class="itemDatas focusItem">Date de création</span>
+					<!--<span class="itemDatas blocInvoiceNumber">Payé</span>-->
+				</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="listing">     <!-- Liste des factures -->
+	            <li ng-repeat="item in listItems | filter: filter">
+	                <div class="listItem">
+	                    <div class="blocItem">
+	                        <span class="itemDatas blocDate">{{item.date}}</span>
+	                        <span class="itemDatas blocCompany">{{item.company}}</span>
+	                        <span class="itemDatas blocInvoiceNumber">{{item.invoiceNumber}}</span>
+	                    </div>
+	                    <!-- <div class="listNote">
+	                    <p>{{item.note}}</p>
+	                    </div> -->
+	                    <!-- <button class="reveal">v</button> -->
+	                </div>
+
+	                <a href="#/client/invoice/detail" class="moreInfos">
+	                    Plus d'infos
+	                </a>
+	            </li>
+	</ul> <!-- Fin de liste des factures -->
+	</div>
+</div>

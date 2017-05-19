@@ -1,0 +1,319 @@
+// Screen
+// ======
+
+@import "compass";
+@import "grids";
+@import "_variables";
+
+// @media screen and (min-width: 480px) {
+// 	#addInvoiceButton{
+// 		background: red;
+// 		margin: 100px 50px;
+// 	}
+	.overlay {
+		display: flex;
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		bottom: 0; 
+		left: 0; 
+		right: 0;		
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	.newClient {
+		font-size: initial;
+		color: $primaryColor;
+		position: relative;
+		height: 410px; 
+		width: 650px;
+		background-color: $mainBackgroundColor;
+		margin: auto; 
+		align-self: center;
+		text-align: center;
+		img {
+			position: absolute;
+			top: -25px;
+			right: -25px;
+			width: 25px;
+			height: 25px;
+			cursor: pointer;
+		}
+		input {
+			color: $primaryColor;
+		}
+		.intro {
+			height: 30px;
+			width: 220px;
+			color: $navColor;
+			background-color: $primaryColor;
+			margin: auto;
+			text-align: center;
+			line-height: 30px;
+			cursor: pointer;
+		}
+		fieldset {
+			display: none;
+			background-color: $mainBackgroundColor;
+			position: absolute;
+			top: 0; 
+			left: 0;
+			height: 100%;
+			width: 100%;
+			border: none;
+			margin: 0;
+		}
+		:-moz-any(label[for="logo"]) {
+			height: 37px;
+		}
+		legend {
+			background-color: $mainBackgroundColor;
+			text-align: center;
+			font-weight: bold;
+			margin: 0 auto 3%;
+			width: 100%;
+			display: block;
+			padding-top: 8%;
+		}
+		label {
+			display: inline-block;
+			font-style: italic;
+			text-align: left;
+		}
+		select, input {
+			height: 21px;
+		}
+		.note {
+				height: 62%;
+		}
+		.line {
+			// @include container(75%);
+			label {margin-top: 2%;}
+			label, input, select, textarea {
+				width: 100%;
+				resize: none;
+			}
+			#note {
+				height: 100%;
+			}
+			#delivery {
+				vertical-align: text-bottom;
+				height: 100%;
+			}
+			.deliver {
+				vertical-align: bottom;
+				width: initial;
+				margin: 0;
+			}
+			label[for="same"] {
+				@include span(1.25 of 10);
+			}
+			label[for="different"] {
+				@include span(1.25 of 10 last);
+			}
+			label[for="tva"], label[for="ref"], #delivery {
+				@include span(7.5 of 10);
+			}
+			label[for="modeTva"], label[for="logo"] {
+				@include span(2.5 of 10 last);
+			}
+			label[for="civil"], label[for="name"], label[for="civilFact"], label[for="nameFact"], label[for="civilDeliver"], label[for="nameDeliver"] {
+				@include span(3.333 of 10);
+			}
+			label[for="firstName"], label[for="firstNameFact"], label[for="firstNameDeliver"] {
+				@include span(3.333 of 10 last);
+			}
+			label[for="phone1"], label[for="email"], label[for="cityFact"], label[for="phone1Fact"], label[for="emailFact"], label[for="cityDeliver"] {
+				@include span(5 of 10);
+			}
+			label[for="streetFact"], label[for="streetDeliver"] {
+				@include span(6 of 10);
+			}
+			label[for="numFact"], label[for="boxFact"], label[for="numDeliver"], label[for="boxDeliver"] {
+				@include span(0.75 of 10);
+			}
+			label[for="zipFact"], label[for="zipDeliver"] {
+				@include span(2.50 of 10 last);
+			}
+			label[for="phone2"], label[for="countryFact"], label[for="phone2Fact"], label[for="faxFact"], label[for="countryDeliver"], label[for="ref2"], label[for="fonction"] {
+				@include span(5 of 10 last);
+			}
+			// label[for="fonction"] {
+			// 	display: none;
+			// }
+			#prefixeTva {
+				width: 12%;
+			}
+			#tva {
+				width: 88%;
+			}
+			label[for="logo"]{
+				position: relative;
+				cursor: pointer;
+				span {
+					color: $navColor;
+					position: absolute;
+					line-height: 21px;
+					bottom: 0;
+					text-align: center;
+					background-color: $primaryColor;
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+		#logo {
+				outline: none;
+				opacity: 0;
+				pointer-events: none;
+		}
+		.progress {
+				position: absolute;
+				bottom: 10%;
+				color: $navColor;
+				background-color: $primaryColor;
+				border: none;
+				height: 22px;
+				line-height: 22px;
+				font-family: arial;
+				font-size: 100%;
+				font-style: normal;
+				font-weight: normal;
+				width: 15%;
+				outline: none;
+				cursor: pointer;
+				text-align: center;
+				&#cancel {
+					left: 10%;
+				}
+				&#submit {
+					right: 10%;
+				}
+				&input {
+					top: 1%;
+				}
+		}
+		input[name="client"], input[name="progress"], button, .progress {
+			display: none;
+		}
+		input[name="client"]:checked ~ #cancel {
+			display: inline-block;
+			right: 10%;
+		}
+		input[name="client"]:checked ~ input[name="progress"] {
+			display: inline-block;
+			top: 10px;
+			position: absolute;
+		}
+		#society:checked ~ #step0{left: 41.5%}
+		#society:checked ~ #step1{left: 45%;}
+		#society:checked ~ #step2{left: 48.5%;}
+		#society:checked ~ #step3{left: 52%;}
+		#society:checked ~ #step4{left: 55.5%;}
+
+		#particulier:checked ~ #step1{left: 43%;}
+		#particulier:checked ~ #step2{left: 46.5%;}
+		#particulier:checked ~ #step3{left: 50%;}
+		#particulier:checked ~ #step4{left: 53.5%;}
+		
+		#particulier:checked ~ #lien2 {
+			display: inline-block;
+			right: 10%;
+		}
+		#society:checked ~ #lien1 {
+			display: inline-block;
+			right: 10%;
+		}
+		#step1:checked + #lien1 {
+			// display: inline-block;
+			left: 25%;
+			// z-index: 2;
+		}
+		#step1:checked ~ #lien2 {
+			display: inline-block;
+			right: 10%;
+		}
+		#step2:checked ~ #lien3 {
+			display: inline-block;
+			right: 10%;
+		}
+		#step3:checked ~ #lien4 {
+			display: inline-block;
+			right: 10%;
+		}
+		#step4:checked ~ #submit {
+			display: inline-block;
+		}
+		#particulier:checked ~ fieldset:nth-of-type(2) {
+		 	display: inline-block;
+		}
+		#particulier:checked ~ #step0 {
+			display: none;
+		}
+		#particulier:checked ~ fieldset>div>label[for="fonction"] {
+			display: none;
+		}
+		#particulier:checked ~ fieldset>legend>span:nth-of-type(2) {
+			display: none;
+		}
+		#society:checked ~ fieldset:nth-of-type(1) {
+		 	display: inline-block;
+		}
+		#society:checked ~ fieldset>div>label[for="ref2"] {
+			display: none;
+		}
+		#society:checked ~ fieldset>legend>span:nth-of-type(1) {
+			display: none
+		}
+		#step1:checked ~ fieldset:nth-of-type(2) {
+			display: inline-block;
+		}
+		// #step1:not(checked) + fieldset:nth-of-type(2) {
+		// 	display: none;
+		// }
+		#step2:checked ~ fieldset:nth-of-type(3) {
+			display: inline-block;
+		}
+		#step3:checked ~ fieldset:nth-of-type(4) {
+			display: inline-block;
+		}
+		#step4:checked ~ fieldset:nth-of-type(5) {
+			display: inline-block;
+		}
+		// .progress:after {
+		// 	content: "";
+		// }
+		.required:before {
+			content: "*";
+		}
+		input[name="progress"]:checked:before,
+		input[name="progress"]:not(checked):before {
+			content: '';
+  			position: absolute;
+  			width: 14px; height: 14px; /* dim. de la case */
+  			// border: 2px solid $primaryColor;
+			background-color: $descriptionColor;
+  			border-radius: 7px;
+			top: 2px;
+			left: -2px;
+			z-index: 1;
+			padding: 2px;
+		}
+		input[name="progress"]:checked:after,
+		input[name="progress"]:not(:checked):after {
+			content: '';
+  			position: absolute;
+			width: 14px; height: 14px;
+			border-radius: 7px;
+			top: 2px;
+			left: -2px;
+  			background-color: $focusColor;
+			z-index: 1;
+		}
+		input[name="progress"]:not(:checked):after {
+			opacity: 0;
+		}
+		input[name="progress"]:checked:before {
+			opacity: 1;
+		}
+	}

@@ -1,0 +1,169 @@
+/* line 4, ../sass/style_UI.scss */
+html {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/style_UI.scss */
+*, *:before, *:after {
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* line 10, ../sass/style_UI.scss */
+.container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 13, ../sass/style_UI.scss */
+body {
+  background: #2a4158;
+  font-family: "century gothic",arial, sans-serif;
+}
+
+/* line 17, ../sass/style_UI.scss */
+.blue {
+  background: #2a4158;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 26, ../sass/style_UI.scss */
+.logo {
+  width: 100%;
+  background: #e5af28;
+  padding: 10px 0;
+  position: fixed;
+  top: 40px;
+}
+
+/* line 35, ../sass/style_UI.scss */
+.navigation {
+  margin-top: 5px;
+  display: inline-block;
+  height: 300px;
+  background: #95a0ac;
+  width: 48.52941%;
+  float: left;
+  margin-right: 0.84034%;
+}
+/* line 41, ../sass/style_UI.scss */
+.navigation:hover {
+  background: #e5af28;
+}
+/* line 44, ../sass/style_UI.scss */
+.navigation:last-child {
+  margin-right: 0;
+}
+/* line 48, ../sass/style_UI.scss */
+.navigation a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #2a4158;
+  text-align: center;
+}
+/* line 55, ../sass/style_UI.scss */
+.navigation h2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #2a4158;
+}
+/* line 64, ../sass/style_UI.scss */
+.navigation img {
+  margin: auto;
+  display: block;
+  color: #2a4158;
+  padding-bottom: 20px;
+}
+
+/* line 72, ../sass/style_UI.scss */
+#off {
+  float: right;
+  margin-right: 10px;
+}
+
+/* line 77, ../sass/style_UI.scss */
+.foot {
+  background: #16202c;
+  color: #fff;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  padding-top: 25px;
+  z-index: 1000;
+}
+/* line 88, ../sass/style_UI.scss */
+.foot .copyright {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 480px) {
+  /* line 96, ../sass/style_UI.scss */
+  .navigation {
+    margin-top: 140px;
+    display: inline-block;
+    height: 300px;
+    background: #95a0ac;
+    width: 23.72881%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  /* line 102, ../sass/style_UI.scss */
+  .navigation:hover {
+    background: #e5af28;
+  }
+  /* line 105, ../sass/style_UI.scss */
+  .navigation:last-child {
+    margin-right: 0;
+  }
+  /* line 109, ../sass/style_UI.scss */
+  .navigation a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #2a4158;
+    text-align: center;
+  }
+  /* line 116, ../sass/style_UI.scss */
+  .navigation h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #2a4158;
+  }
+  /* line 125, ../sass/style_UI.scss */
+  .navigation img {
+    margin: auto;
+    display: block;
+    color: #2a4158;
+    padding-bottom: 20px;
+  }
+
+  /* line 133, ../sass/style_UI.scss */
+  #off {
+    float: right;
+    margin-right: 0px;
+  }
+}

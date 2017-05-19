@@ -1,0 +1,42 @@
+<linkhomeclient></linkhomeclient>
+
+<navbarclient></navbarclient>
+<searchbarclient></searchbarclient>
+
+<div>
+	<div class="container">
+		<a href="#/pro/estimate/add" class="addElemBtn" style="visibility:hidden">+ devis</a>
+	<ul class="listingTitle">
+		<li>
+			<div class="listItem">
+				<div class="blocItem">
+					<span class="itemDatas focusItem">Numéro</span>
+					<span class="itemDatas focusItem">Client</span>
+					<span class="itemDatas focusItem">Date de création</span>
+					<!--<span class="itemDatas blocInvoiceNumber">Payé</span>-->
+				</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="listing">     <!-- Liste des devis -->
+	            <li ng-repeat="item in listEstimates | filter: filter">
+	                <div class="listItem">
+	                    <div class="blocItem">
+	                        <span class="itemDatas blocDate">{{item.date}}</span>
+	                        <span class="itemDatas blocCompany">{{item.company}}</span>
+	                        <span class="itemDatas blocInvoiceNumber">{{item.invoiceNumber}}</span>
+	                    </div>
+	                    <!-- <div class="listNote">
+	                    <p>{{item.note}}</p>
+	                    </div> -->
+	                    <!-- <button class="reveal">v</button> -->
+	                </div>
+
+	                <a href="#/client/estimate/detail" class="moreInfos">
+	                    Plus d'infos
+	                </a>
+	            </li>
+	</ul> <!-- Fin de liste des devis -->
+	</div>
+</div>
+

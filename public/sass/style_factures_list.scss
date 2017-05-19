@@ -1,0 +1,346 @@
+@import "compass";
+@import "grids";
+@import "variables";
+
+nav {
+    display: block;
+    background-color: $mainBackgroundColor;
+    position: fixed;
+    z-index: 5;
+    width: 50px;
+    height: 100%;
+
+    ul {
+        margin-top: 50px;
+
+        li {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            padding: 0px;
+            // &:hover {
+            //         background-color: aliceblue;
+            //     }
+            
+            // &:nth-child(2) {
+            //     padding-top: 25px;
+            // }          
+            a {
+                background-color: yellow;
+                display: inline-block;
+                width: 60%;
+                height: 60%;
+                
+                span {
+                    display: none;
+                }
+                &#factures{
+                    background: url(../images/facture.svg) no-repeat;
+                    
+                    // width: 32px;
+                    // height: 32px;
+                    @include navButton();
+                }
+                &#devis{
+                    background: url(../images/devis.svg) no-repeat;
+                    
+                    // width: 32px;
+                    // height: 32px;
+                    @include navButton();       
+                }
+                &#myClients{
+                    background: url(../images/client_icon.svg) no-repeat;
+                    
+                    // width: 32px;
+                    // height: 32px;
+                    @include navButton();
+                }
+                &#setting{
+                    background: url(../images/setting.svg) no-repeat;
+
+                    // width: 32px;
+                    // height: 32px;
+                    @include navButton();        
+                }
+
+            }
+            
+        }
+
+    }
+
+}
+
+.search{
+    padding: 60px 10px 0px;
+    // background: $mainBackgroundColor;
+    // background: $focusColor;
+    margin: 0 auto;
+    text-align: left;
+    *{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    button {
+        border: none;
+        background-color: $focusColor;
+        padding: 2px;
+        &:hover{
+            background-color: aliceblue;
+        }
+    }
+    p {
+        display: none;
+        margin-top: 15px;
+        margin-right: 15px;
+        text-transform: uppercase;
+    }
+    input{
+        border: none;
+        @include span(6.5 of 12);
+        padding: 15px;
+        margin-left: 50px;
+
+    }
+    .labelArrow {position:relative;
+        &:after {
+            content:'';
+            font:11px "Consolas", monospace;
+            color:#aaa;
+            height: 100%;
+            line-height: 100%;
+            width: 20px;
+            // background-color: $primaryColor;
+            background-color: $mainBackgroundColor;
+            // -webkit-transform:rotate(90deg);
+            // -moz-transform:rotate(90deg);
+            // -ms-transform:rotate(90deg);
+            // transform:rotate(90deg);
+            // right:8px; top:2px;
+            right: 0;
+            top: 0;
+            position:absolute;
+            pointer-events:none;
+
+            &:hover {
+                    background-color: aliceblue;
+            }
+        }
+
+    }
+    
+    select{
+        @include span(2 of 12);
+        position: relative;
+        border: none;
+        padding: 15px;
+        width: 125px;
+        -webkit-appearance: none;  /*Removes default chrome and safari style*/
+        -moz-appearance: none;  /*Removes default style Firefox*/
+
+        option{
+            display: block;
+        }
+    }
+    #croissant, #decroissant {
+        margin-bottom: 5px;
+    }
+}
+.searchArea{
+    width: 300px;
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 480px) {
+    nav{
+        @include span(4 of 24);
+        width: 172px;
+        background: $mainBackgroundColor;
+        height: 100%;
+        position: fixed;
+        display: block;
+        top: 100px;
+        .h1Border {
+            border-bottom: 2px solid $primaryColor;
+            border-top: 2px solid $primaryColor;
+            letter-spacing: 3px;
+            font-weight: bold;
+            padding-bottom: 25px;
+            padding-top: 25px;
+            background: $focusColor;
+        }
+        ul {
+            margin-top: 0px;
+            li {
+                width: 100%;
+                height: 100%;
+                padding: 15px 0;
+                a {
+                    display: inline-block;
+                    &:hover {
+                        background-color: red;
+                    }
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+        a {
+            display: block;
+            height: 50px;
+            // margin-left: 15px;
+            padding-left: 65px;
+            padding-top:15px;
+            text-align: left;
+            text-decoration: none;
+            color: $primaryColor;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        li {
+            
+            text-decoration: none;
+            color: $primaryColor;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        #factures{
+            background: url(../images/facture.svg) no-repeat;
+            margin-left: 15px;
+            float: left;
+            width: 50px;
+            height: 50px;
+            @include navButton();
+        }
+        #devis{
+            background: url(../images/devis.svg) no-repeat;
+            margin-left: 15px;
+            float: left;
+            width: 50px;
+            height: 50px;
+            @include navButton();       
+        }
+        #myClients{
+            background: url(../images/client_icon.svg) no-repeat;
+            margin-left: 15px;
+            float: left;
+            width: 40px;
+            height: 40px;
+            @include navButton();
+        }
+        #setting{
+            background: url(../images/setting.svg) no-repeat;
+            margin-left: 15px;
+            float: left;
+            width: 50px;
+            height: 50px;
+            @include navButton();  
+           a{
+               padding-top: 25px;
+           }           
+        }
+    }
+    section{
+        // @include span(13.5 of 24 narrow);
+        z-index: 999;
+        width: 940px;
+        // background-color: red;
+        position: fixed;
+        font-size: 12px;
+        top: 100px;
+        text-align: right;
+        // margin-left: span(4 of 24 wider);
+        // img{
+        //     display: inline-block;
+        // }
+        ul {
+                padding-top: 170px;
+            }
+    }   
+
+    .blue2{
+        background: $primaryColor;
+        width: 100%;
+        height: 10px;
+        margin-left: 198px;
+    }
+    .search{
+        padding: 10px;
+        background: $mainBackgroundColor;
+        margin-left: 198px;
+        text-align: left;
+        *{
+            display: inline-block;
+            vertical-align: middle;
+            // margin-right: 10px;
+        }
+        button {
+            border: none;
+            background-color: $focusColor;
+            padding: 2px;
+            &:hover{
+                background-color: aliceblue;
+            }
+        }
+        p {
+            display: inline-block;
+            margin-top: 0px;
+            margin-right: 15px;
+            text-transform: uppercase;
+        }
+        input{
+            border: none;
+            width: 50%;
+            padding: 5px;
+        }
+        .labelArrow {position:relative;
+            &:after {
+                content:'';
+                font:11px "Consolas", monospace;
+                color:#aaa;
+                height: 100%;
+                line-height: 100%;
+                width: 20px;
+                background-color: $primaryColor;
+                // -webkit-transform:rotate(90deg);
+                // -moz-transform:rotate(90deg);
+                // -ms-transform:rotate(90deg);
+                // transform:rotate(90deg);
+                // right:8px; top:2px;
+                right: 0;
+                top: 0;
+                position:absolute;
+                pointer-events:none;
+
+                &:hover {
+                        background-color: aliceblue;
+                }
+            }
+
+        }
+        
+        select{
+            position: relative;
+            border: none;
+            padding: 5px;
+            margin-top: 0px;
+            width: 125px;
+            -webkit-appearance: none;  /*Removes default chrome and safari style*/
+            -moz-appearance: none;  /*Removes default style Firefox*/
+
+            option{
+                display: block;
+            }
+        }
+        #croissant, #decroissant {
+            margin-bottom: 5px;
+        }
+    }
+    .searchArea{
+        width: 300px;
+        margin-right: 20px;
+    }
+}
