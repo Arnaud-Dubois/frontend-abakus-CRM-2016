@@ -1,0 +1,192 @@
+<span>
+	<span class="overlay" id="splash" ng-if="showForm">
+        
+
+	<form name="addClient" ng-submit="moreClient(addClient.$valid)" class="newClient" enctype="multipart/form-data">		
+		<legend>Introduction d'un nouveau client</legend>
+		<label for="particulier" class="intro">Particulier</label>
+		<input type="radio" value="false" id="particulier" name="client" ng-model="newClient.isCompany" required>
+		<label for="society"  class="intro">Société</label>
+		<input type="radio" value="true" id="society" name="client" ng-model="newClient.isCompany" required>
+
+		<input type="radio" name="progress" value="step0" id="step0" ng-checked="newClient.isCompany=='true'">
+		<label for="step0" class="progress" id="lien0">SUIVANT</label>
+		
+		<fieldset>
+			<legend>Société</legend>
+			<div class="line">
+				<label for="ref" class="required">Dénomination sociale<br>
+					<input type="text" id="ref" ng-model="newClient.name">
+				</label>
+				<label for="logo">Logo<br>
+					<span>Parcourir</span>
+					<input type="file" id="logo" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
+				</label>
+			</div>
+			<div class="line">
+				<label for="tva">N° de TVA<br>
+				<select id="prefixeTva"  ng-model="newClient.prevat.num" ng-options="pretva for pretva in param[0].vatPrefix">
+				</select><!--
+				--><input type="text" id="tva" ng-model="newClient.vat.num">
+				</label>
+				<label for="modeTva">Mode de TVA<br>
+				<select id="modeTva"  ng-model="modeTva" ng-options="tva for tva in param[0].vatRate">
+				</select>
+				</label>
+			</div>
+			<div class="line">
+				<label for="siren" ng-show="newClient.prevat.num=='FR'">N° SIREN<br>
+				<input type="text" id="siren" ng-model="newClient.vat.siren"></label>
+			</div>
+			<div class="line">
+				<label for="rcs" ng-show="newClient.prevat.num=='FR'">N° RCS<br>
+				<input type="text" id="rcs" ng-model="newClient.vat.rcs"></label>
+			</div>
+		</fieldset>
+
+		<input type="radio" name="progress" value="step1" id="step1" ng-checked="newClient.isCompany=='false'">
+		<label for="step1" class="progress" id="lien1">SUIVANT</label>
+		
+		<fieldset>
+			<legend><span>Coordonnées</span><span>Personne</span> de contact</legend>
+			<div class="line">
+				<label for="civil" class="required">Civilité<br/>
+				<select id="civil" ng-model="newClient.contactPerson.civility" required>
+					<option value="Monsieur">Monsieur</option>
+					<option value="Madame">Madame</option>
+					<option value="Mademoiselle">Mademoiselle</option>
+				</select></label>
+				<label for="name" class="required">Nom<br/>
+				<input type="text" id="name" ng-model="newClient.contactPerson.lastname" required></label>
+				<label for="firstName" class="required">Prénom<br/>
+				<input type="text" id="firstName" ng-model="newClient.contactPerson.firstname" required></label>
+			</div>
+			<div class="line">
+				<label for="phone1" class="required">Téléphone principal<br/>
+				<input type="tel" id="phone1" ng-model="newClient.contactPerson.phoneMain" required></label>
+				<label for="phone2">Téléphone secondaire<br/>
+				<input type="tel" id="phone2" ng-model="newClient.contactPerson.phoneSec"></label>
+			</div>
+			<div class="line">	
+				<label for="email" class="required">Email<br/>
+				<input type="email" id="email" ng-model="newClient.contactPerson.mail" required></label>
+				<label for="fonction">Fonction<br/>
+				<input type="text" id="fonction" ng-model="newClient.contactPerson.post"></label>
+				<label for="ref2" class="required">Nom de référence<br>
+				<input type="text" id="ref2" ng-model="newClient.name"></label>
+			</div>
+		</fieldset>
+
+		<input type="radio" name="progress" value="step2" id="step2">
+		<label for="step2" class="progress" id="lien2">SUIVANT</label>
+		
+		<fieldset>
+			<legend>Coordonnées de facturation</legend>
+			<div class="line">
+				<label for="civilFact">Civilité<br/>
+				<select id="civilFact"  ng-model="newClient.billingInfo.civility">
+					<option value="Monsieur">Monsieur</option>
+					<option value="Madame">Madame</option>
+					<option value="Mademoiselle">Mademoiselle</option>
+				</select></label>
+				<label for="nameFact">Nom<br/>
+				<input type="text" id="nameFact"  ng-model="newClient.billingInfo.lastname"></label>
+				<label for="firstNameFact">Prénom<br/>
+				<input type="text" id="firstNameFact"  ng-model="newClient.billingInfo.firstname"></label>
+			</div>
+			<div class="line">
+			<label for="streetFact" class="required">Rue<br/>
+			<input type="text" id="streetFact"  ng-model="newClient.billingInfo.street" required></label>
+			<label for="numFact" class="required">N°<br>
+			<input type="text" id="numFact"  ng-model="newClient.billingInfo.number" required></label>
+			<label for="boxFact">Bte<br>
+			<input type="text" id="boxFact"  ng-model="newClient.billingInfo.box"></label>
+			<label for="zipFact" class="required">Code Postal<br>
+			<input type="text" id="zipFact"  ng-model="newClient.billingInfo.zip" required></label>
+			</div>
+			<div class="line">
+			<label for="cityFact" class="required">Localité<br>
+			<input type="text" id="cityFact"   ng-model="newClient.billingInfo.town" required></label>
+			<label for="countryFact" class="required">Pays<br/>
+			<select id="countryFact" ng-model="newClient.billingInfo.country" ng-options="country for country in param[0].countries" required>
+			</select></label>
+			</div>
+			<div class="line">
+			<label for="phone1Fact" class="required">Téléphone principal<br/>
+			<input type="tel" id="phone1Fact"  ng-model="newClient.billingInfo.phoneMain" required></label>
+			<label for="phone2Fact">Téléphone secondaire<br/>
+			<input type="tel" id="phone2Fact"   ng-model="newClient.billingInfo.phoneSec"></label>
+			</div>
+			<div class="line">
+				<label for="emailFact" class="required">Email<br/>
+				<input type="email" id="emailFact"  ng-model="newClient.billingInfo.mail" required></label>
+				<label for="faxFact">Fax<br>
+				<input type="tel" id="faxFact"   ng-model="newClient.billingInfo.fax"></label>
+			</div>
+		</fieldset>
+
+		<input type="radio" name="progress" value="step3" id="step3">
+		<label for="step3" class="progress" id="lien3">SUIVANT</label>
+		
+		<fieldset>
+			<legend>Coordonnées de livraison</legend>
+			<div class="line">
+			<label id="delivery">Préremplir les coordonnées de livraison :</label>
+			<label for="same">
+			<input type="radio" value="true" id="same" name="delivery" class="deliver" ng-model="sameDelivery" ng-change="checkDelivery(true)"> Oui</label>
+			<label for="different">
+			<input type="radio" value="false" id="different" name="delivery" class="deliver" ng-model="sameDelivery" ng-change="checkDelivery(false)"> Non</label>
+			</div>
+			<br><br><hr>
+			<div class="line">
+				<label for="civilDeliver">Civilité<br/>
+					<select name="Civilité" id="civilDeliver"   ng-model="newClient.deliveryInfo.civility">
+				<option value="Monsieur">Monsieur</option>
+				<option value="Madame">Madame</option>
+				<option value="Mademoiselle">Mademoiselle</option>
+			</select></label>
+			<label for="nameDeliver">Nom<br/>
+			<input type="text" id="nameDeliver" ng-model="newClient.deliveryInfo.lastname"></label>
+			<label for="firstNameDeliver">Prénom<br/>
+			<input type="text" id="firstNameDeliver" ng-value="newClient.deliveryInfo.firstname" ng-model="newClient.deliveryInfo.firstname"></label>
+			</div>
+			<div class="line">
+				<label for="societyDeliver">Société (si livraison dans une société)<br>
+				<input type="text" id="societyDeliver" ng-model="newClient.deliveryInfo.company"></label>
+			</div>
+			<div class="line">
+				<label for="streetDeliver" class="required">Rue<br/>
+				<input type="text" id="streetDeliver" ng-model="newClient.deliveryInfo.street" required></label>
+				<label for="numDeliver" class="required">N°<br>
+				<input type="text" id="numDeliver" ng-model="newClient.deliveryInfo.number" required></label>
+				<label for="boxDeliver">Bte<br>
+				<input type="text" id="boxDeliver" ng-model="newClient.deliveryInfo.box"></label>
+				<label for="zipDeliver" class="required">Code Postal<br>
+				<input type="text" id="zipDeliver" ng-model="newClient.deliveryInfo.zip" required></label>
+			</div>
+			<div class="line">
+				<label for="cityDeliver" class="required">Localité<br>
+				<input type="text" id="cityDeliver" ng-model="newClient.deliveryInfo.town" required></label>
+				<label for="countryDeliver" class="required">Pays<br/>
+				<select id="countryDeliver" ng-model="newClient.deliveryInfo.country" ng-options="country for country in param[0].countries" required>
+				</select></label>
+			</div>
+		</fieldset>
+
+		<input type="radio" name="progress" value="step4" id="step4">
+		<label for="step4" class="progress" id="lien4">SUIVANT</label>
+
+		<fieldset>
+			<legend>Note relative au client</legend>
+			<div class="line note">
+				<textarea id="note" ng-model="newClient.memo"></textarea>
+			</div>
+		</fieldset>
+
+		<button type="reset" id="cancel" class="progress" ng-click="newClient={}">ANNULER</button>
+		<button type="submit" id="submit" class="progress">VALIDER</button>
+        <img src="../images/close.svg" alt="close" ng-click="splash(false)">
+	</form>
+	</div>
+</div>
